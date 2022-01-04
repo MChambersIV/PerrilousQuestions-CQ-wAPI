@@ -1,0 +1,17 @@
+h1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.qstart {
+    display: flex;
+    justify-content: center;
+
+}
+
+.qquestion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
