@@ -2,7 +2,6 @@ var question = document.getElementById('qquestion');
 var answer = document.getElementById('qanswer');
 var start = document.getElementById('qstart');
 var timer = document.getElementById('qtimer');
-
 var qlist = [
     "Of the three major coding languages, which is the most integral part of a webpage",
     "What is Javascript's file extension?",
@@ -14,6 +13,7 @@ var qans1 = [
     "HTML",
     "CSS",
     "Javascript",
+    "",
 ];
 
 var qans2 = [
@@ -40,15 +40,16 @@ var qans4 = [
 
 ];
 
+var time = 30;
 
 function runClock() {
-    var time = 30;
+    
     var timeCount = setInterval(function () {
 
-        if (timeCount > 1) {
+        if (time > 1) {
             timer.textContent = time + ' seconds left!';
             time--;
-        } else if (timeCount === 1) {
+        } else if (time === 1) {
             timer.textContent = time + ' second left!'
             time--;
         } else {
@@ -60,4 +61,15 @@ function runClock() {
 
 };
 
+var qq1 = document.getElementById('qanswer1')
+var qq2 = document.getElementById('qanswer2')
+var qq3 = document.getElementById('qanswer3')
+var qq4 = document.getElementById('qanswer4')
+
+function runQuiz() {
+    question.textContent = qlist[0]
+
+}
+
 start.addEventListener("click", runClock)
+start.addEventListener("click", runQuiz)
