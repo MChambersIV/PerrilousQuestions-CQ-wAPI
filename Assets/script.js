@@ -2,6 +2,12 @@ var question = document.getElementById('qquestion');
 var answer = document.getElementById('qanswer');
 var start = document.getElementById('qstart');
 var timer = document.getElementById('qtimer');
+var scores = document.getElementById('qscores');
+
+function hidescore(){scores.style.display = "none"};
+
+hidescore();
+
 var qlist = [
     "Of the three major coding languages, which is the most integral part of a webpage",
     "What is Javascript's file extension?",
@@ -55,6 +61,7 @@ function runClock() {
         } else {
             timer.textContent = 'TIMES UP!';
             clearInterval(timeCount);
+            scores.style.display = "block";
             
         }
     }, 1000);
@@ -74,16 +81,34 @@ function runQuiz() {
     qq4.textContent = qans1[3];
 
     qq1.addEventListener("click", runQuizTwo);
+    qq2.onclick = function() {
+        qq2.textContent = "Incorrect -2s";
+    };   
+    qq3.onclick = function() {
+        qq3.textContent = "Incorrect -2s";
+    };   
+    qq4.onclick = function() {
+        qq4.textContent = "Incorrect -2s";
+    };     
 };
 
 function runQuizTwo() {
     question.textContent = qlist[1];
-    qq1.textContent = qans2[0]
-    qq2.textContent = qans2[1]
-    qq3.textContent = qans2[2]
-    qq4.textContent = qans2[3]
+    qq1.textContent = qans2[0];
+    qq2.textContent = qans2[1];
+    qq3.textContent = qans2[2];
+    qq4.textContent = qans2[3];
 
     qq3.addEventListener("click", runQuizThree);
+    qq1.onclick = function() {
+        qq1.textContent = "Incorrect -2s";
+    };   
+    qq2.onclick = function() {
+        qq2.textContent = "Incorrect -2s";
+    };   
+    qq4.onclick = function() {
+        qq2.textContent = "Incorrect -2s";
+    };   
 };
 
 function runQuizThree() {
@@ -94,6 +119,15 @@ function runQuizThree() {
     qq4.textContent = qans3[3];
 
     qq4.addEventListener("click", runQuizFour);
+    qq1.onclick = function() {
+        qq1.textContent = "Incorrect -2s";
+    };   
+    qq2.onclick = function() {
+        qq2.textContent = "Incorrect -2s";
+    };   
+    qq3.onclick = function() {
+        qq3.textContent = "Incorrect -2s";
+    };
 };
 
 function runQuizFour() {
@@ -104,6 +138,15 @@ function runQuizFour() {
     qq4.textContent = qans4[3];
 
     qq2.addEventListener("click", runQuizDone);
+    qq1.onclick = function() {
+        qq1.textContent = "Incorrect -2s";
+    };
+    qq3.onclick = function() {
+        qq3.textContent = "Incorrect -2s";
+    };
+    qq4.onclick = function() {
+        qq4.textContent = "Incorrect -2s";
+    };
 };
 
 function runQuizDone() {
@@ -114,9 +157,21 @@ function runQuizDone() {
     qq4.style.display = 'none';
     
     clearInterval(timeCount);
-    return(timeCount);
+    runScoreBoard();
 
 };
+
+var highScore = []
+
+function runScoreBoard() {
+
+
+scores.style.display = "block";
+
+
+};
+
+
 
 start.addEventListener("click", runClock)
 start.addEventListener("click", runQuiz)
