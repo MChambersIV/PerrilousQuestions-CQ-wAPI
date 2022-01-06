@@ -67,7 +67,41 @@ var qq3 = document.getElementById('qanswer3')
 var qq4 = document.getElementById('qanswer4')
 
 function runQuiz() {
-    question.textContent = qlist[0]
+    question.textContent = qlist[0];
+    qq1.textContent = qans1[0];
+    qq2.textContent = qans1[1];
+    qq3.textContent = qans1[2];
+    qq4.textContent = qans1[3];
+
+    qq1.addEventListener("click", runQuizTwo);
+};
+
+function runQuizTwo() {
+    question.textContent = qlist[1];
+    qq1.textContent = qans2[0]
+    qq2.textContent = qans2[1]
+    qq3.textContent = qans2[2]
+    qq4.textContent = qans2[3]
+
+    qq3.addEventListener("click", runQuizThree);
+};
+
+function runQuizThree() {
+    question.textContent = qlist[2];
+    qq1.textContent = qans3[0];
+    qq2.textContent = qans3[1];
+    qq3.textContent = qans3[2];
+    qq4.textContent = qans3[3];
+
+    qq4.addEventListener("click", runQuizFour);
+};
+
+function runQuizFour() {
+    question.textContent = qlist[3]
+    qq1.textContent = qans4[0]
+    qq2.textContent = qans4[1]
+    qq3.textContent = qans4[2]
+    qq4.textContent = qans4[3]
 
 }
 
