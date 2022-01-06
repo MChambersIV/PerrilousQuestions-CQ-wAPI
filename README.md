@@ -22,3 +22,6 @@ If you run out of time the timer will change to display a "TIMES UP!" message. T
 
 
 In a Win state the timer will freeze and again the scoreboard will appear along with the ability to enter you name with the score alongside it equal to your total time remaining after complettion.
+
+##
+Link to Deployed site: https://mchambersiv.github.io/coding-quiz-mc/
