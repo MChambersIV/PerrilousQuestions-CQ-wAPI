@@ -44,7 +44,7 @@ var time = 30;
 
 function runClock() {
     
-    var timeCount = setInterval(function () {
+    timeCount = setInterval(function () {
 
         if (time > 1) {
             timer.textContent = time + ' seconds left!';
@@ -97,13 +97,26 @@ function runQuizThree() {
 };
 
 function runQuizFour() {
-    question.textContent = qlist[3]
-    qq1.textContent = qans4[0]
-    qq2.textContent = qans4[1]
-    qq3.textContent = qans4[2]
-    qq4.textContent = qans4[3]
+    question.textContent = qlist[3];
+    qq1.textContent = qans4[0];
+    qq2.textContent = qans4[1];
+    qq3.textContent = qans4[2];
+    qq4.textContent = qans4[3];
 
-}
+    qq2.addEventListener("click", runQuizDone);
+};
+
+function runQuizDone() {
+    question.style.display = 'none';
+    qq1.style.display = 'none';
+    qq2.style.display = 'none';
+    qq3.style.display = 'none';
+    qq4.style.display = 'none';
+    
+    clearInterval(timeCount);
+    return(timeCount);
+
+};
 
 start.addEventListener("click", runClock)
 start.addEventListener("click", runQuiz)

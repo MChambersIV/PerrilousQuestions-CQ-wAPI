@@ -1,17 +1,29 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color:aliceblue;
+    margin: 10px;
+}
 h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
+    align-items: center;
+    color: black;
+    font-size: 300%;
+    margin: 10px;
+};
 
-.qstart {
+#startWrap {
     display: flex;
-    justify-content: center;
+    align-items: center;
+};
 
-}
-
-.qquestion {
-    display: flex;
-    flex-wrap: wrap;
+#section2 {
+    display:flex;
     justify-content: center;
+    color: black;
+    font-size: 300%;
 }
