@@ -18,7 +18,7 @@ If you make an incorrect choice that choice will change to inform you it was cor
 
 If you run out of time the timer will change to display a "TIMES UP!" message. Then the scoreboard listing names and scores of those who have taken the quiz before. Additionally you are able to enter your name which will be 0.
 
-![Quiz Win State](./images/cqwin.png "Quiz Win State")
+![Quiz Win State](./images/cqwin1.png "Quiz Win State")
 
 
 In a Win state the timer will freeze and again the scoreboard will appear along with the ability to enter you name with the score alongside it equal to your total time remaining after complettion.
