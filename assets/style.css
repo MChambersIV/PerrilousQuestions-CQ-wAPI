@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color:rgb(35, 34, 80);
+    color: rgb(197, 86, 21);
+    margin: 10px;
+    text-align: justify;
+    justify-content: space-between 10px;
+}
+h1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: rgb(197, 86, 21);
+    font-size: 300%;
+    margin: 10px;
+};
+
+#startWrap {
+    display: flex;
+    align-items: center;
+};
+
+#section2 {
+    display:flex;
+    justify-content: center;
+    color: black;
+    font-size: 300%;
+}
+
+button {
+    color: rgb(197, 86, 21);
+    background-color:rgb(35, 34, 80);
+    border-color:rgb(197, 86, 21);
+};
+
+#wname textarea {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: rgb(197, 86, 21);
+    background-color:rgb(35, 34, 80);
+
+};
