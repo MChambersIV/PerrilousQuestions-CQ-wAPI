@@ -3,7 +3,8 @@ body {
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-    background-color:aliceblue;
+    background-color:rgb(35, 34, 80);
+    color: rgb(197, 86, 21);
     margin: 10px;
     text-align: justify;
     justify-content: space-between 10px;
@@ -13,7 +14,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: rgb(197, 86, 21);
     font-size: 300%;
     margin: 10px;
 };
@@ -30,26 +31,16 @@ h1 {
     font-size: 300%;
 }
 
-table {
-    border:1px solid black;
-    font-size: 20px;
-  };
+button {
+    color: rgb(197, 86, 21);
+    background-color:rgb(35, 34, 80);
+    border-color:rgb(197, 86, 21);
+};
 
-tr {
-    border:1px solid black;
-    margin: 1px;
-  };
-
-td {
-    border:1px solid black;
-    margin: 1px;
-  };
-
-input {
+#wname textarea {
     margin-top: 30px;
     margin-bottom: 10px;
-}
+    color: rgb(197, 86, 21);
+    background-color:rgb(35, 34, 80);
 
-li {
-    list-style: none;
-}
+};

@@ -3,6 +3,10 @@ var answer = document.getElementById('qanswer');
 var start = document.getElementById('qstart');
 var timer = document.getElementById('qtimer');
 var scores = document.getElementById('qscores');
+var scoreBoard = document.getElementById('scoreboard');
+var winnerSubmit = document.getElementById('wsub');
+var winnerName = document.getElementById('wname')
+
 
 function hidescore(){scores.style.display = "none"};
 
@@ -19,7 +23,7 @@ var qans1 = [
     "HTML",
     "CSS",
     "Javascript",
-    "",
+    "Python",
 ];
 
 var qans2 = [
@@ -80,15 +84,22 @@ function runQuiz() {
     qq3.textContent = qans1[2];
     qq4.textContent = qans1[3];
 
-    qq1.addEventListener("click", runQuizTwo);
+    qq1.onclick = function() {
+        qq1.textContent = "Correct!";
+        runQuizTwo();
+    };
+
     qq2.onclick = function() {
         qq2.textContent = "Incorrect -2s";
+        time - 2;
     };   
     qq3.onclick = function() {
         qq3.textContent = "Incorrect -2s";
+        time - 2;
     };   
     qq4.onclick = function() {
         qq4.textContent = "Incorrect -2s";
+        time - 2;
     };     
 };
 
@@ -99,15 +110,21 @@ function runQuizTwo() {
     qq3.textContent = qans2[2];
     qq4.textContent = qans2[3];
 
-    qq3.addEventListener("click", runQuizThree);
+    qq3.onclick = function() {
+        qq3.textContent = "Correct";
+        runQuizThree();
+    };
     qq1.onclick = function() {
         qq1.textContent = "Incorrect -2s";
+        time - 2;
     };   
     qq2.onclick = function() {
         qq2.textContent = "Incorrect -2s";
+        time - 2;
     };   
     qq4.onclick = function() {
         qq2.textContent = "Incorrect -2s";
+        time - 2;
     };   
 };
 
@@ -118,15 +135,21 @@ function runQuizThree() {
     qq3.textContent = qans3[2];
     qq4.textContent = qans3[3];
 
-    qq4.addEventListener("click", runQuizFour);
+    qq4.onclick = function() {
+        qq4.textContent = "Correct";
+        runQuizFour();
+    };
     qq1.onclick = function() {
         qq1.textContent = "Incorrect -2s";
+        time - 2;
     };   
     qq2.onclick = function() {
         qq2.textContent = "Incorrect -2s";
+        time - 2;
     };   
     qq3.onclick = function() {
         qq3.textContent = "Incorrect -2s";
+        time - 2;
     };
 };
 
@@ -137,15 +160,22 @@ function runQuizFour() {
     qq3.textContent = qans4[2];
     qq4.textContent = qans4[3];
 
-    qq2.addEventListener("click", runQuizDone);
+    qq2.onclick = function() {
+        qq2.textContent = "Correct!";
+        runQuizDone();
+    };
+
     qq1.onclick = function() {
         qq1.textContent = "Incorrect -2s";
+        time - 2;
     };
     qq3.onclick = function() {
         qq3.textContent = "Incorrect -2s";
+        time - 2;
     };
     qq4.onclick = function() {
         qq4.textContent = "Incorrect -2s";
+        time - 2;
     };
 };
 
@@ -161,17 +191,61 @@ function runQuizDone() {
 
 };
 
-var highScore = []
 
 function runScoreBoard() {
-
-
-scores.style.display = "block";
-
-
+    scores.style.display = "block";
+    savedScore();
 };
 
+function savedScore() {
+    var scores = JSON.parse(localStorage.getItem("winner"));
+    console.log(scores);
+
+    
+            var savedWinnerRow = document.createElement('tr');
+            var savedWinnerN = document.createElement('td');
+            var savedWinnerHS = document.createElement('td');
+
+            savedWinnerN.innerHTML = scores.name;
+            savedWinnerHS.innerHTML = scores.score;
+
+            scoreBoard.appendChild(savedWinnerRow);
+            savedWinnerRow.appendChild(savedWinnerN);
+            savedWinnerRow.appendChild(savedWinnerHS);
+    
+};
+
+winnerSubmit.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        var highScore = [];
+
+        highScore.push(time+1);
+
+        var winnerRow = document.createElement('tr');
+        var winnerN = document.createElement('td');
+        var winnerHS = document.createElement('td');
 
 
-start.addEventListener("click", runClock)
-start.addEventListener("click", runQuiz)
+        winnerN.innerHTML = winnerName.value.trim();
+        winnerHS.innerHTML = highScore[0];
+
+        scoreBoard.appendChild(winnerRow);
+        winnerRow.appendChild(winnerN);
+        winnerRow.appendChild(winnerHS);
+
+
+        var winner = {
+        name: winnerName.value.trim(),
+        score: highScore[0],
+        };
+    
+    localStorage.setItem("winner", JSON.stringify(winner));
+        
+    });
+
+
+
+
+start.addEventListener("click", runClock);
+start.addEventListener("click", runQuiz);
