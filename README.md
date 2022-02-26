@@ -1,4 +1,4 @@
-# coding-quiz-mc
+# Perrilous Questions
 ##
 Link to Deployed site: https://mchambersiv.github.io/coding-quiz-mc/
 ##
